@@ -1,4 +1,10 @@
 {
+  "name": "discord-bot",
+  "description": "Discord bot for alpaca",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node index.js",
     "build": "yarn"
