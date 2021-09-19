@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "yarn && node register-command.js"
+    "build": "yarn && node register-commands.js"
   },
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
