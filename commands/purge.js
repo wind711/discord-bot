@@ -4,16 +4,16 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const MAX_MESSAGES = 100
 
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('purge')
-		.setDescription('Remove the most recent x messages')
+  data: new SlashCommandBuilder()
+    .setName('purge')
+    .setDescription('Remove the most recent x messages')
     .addIntegerOption(option =>
-        option.setName('number')
-            .setDescription('number of messages to remove')
-            .setRequired(true)),
-	async execute(interaction) {
-		await purge(interaction);
-	},
+      option.setName('number')
+        .setDescription('number of messages to remove')
+        .setRequired(true)),
+  async execute(interaction) {
+    await purge(interaction);
+  },
 };
 
 async function purge(interaction) {
@@ -26,10 +26,10 @@ async function purge(interaction) {
 
   if (numMessagesToRemove > MAX_MESSAGES) {
     embed.setColor('#fde953')
-         .setDescription(`Warning: cannot remove more than 100 at a time (discord limit), removed ${removedMessages.size} messages.`)
+      .setDescription(`Warning: cannot remove more than 100 at a time (discord limit), removed ${removedMessages.size} messages.`)
   } else {
     embed.setColor('#42b983')
-         .setDescription(`Successful: removed ${removedMessages.size} messages`)
+      .setDescription(`Successful: removed ${removedMessages.size} messages`)
   }
 
   return interaction.reply({
